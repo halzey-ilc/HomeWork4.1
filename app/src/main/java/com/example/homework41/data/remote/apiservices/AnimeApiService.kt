@@ -1,4 +1,4 @@
-package com.example.homework41.data.remote.api
+package com.example.homework41.data.remote.apiservices
 
 import com.example.homework41.data.models.DataItem
 import com.example.homework41.data.models.Detail

@@ -3,9 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.form.FormFragment">
-
-
+    tools:context=".ui.fragments.detail.DetailFragment">
 
     <ImageView
         android:id="@+id/iv_fullscreen"
@@ -23,6 +21,5 @@
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"/>
-
 
 </FrameLayout>

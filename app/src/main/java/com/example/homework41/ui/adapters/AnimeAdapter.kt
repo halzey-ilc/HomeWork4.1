@@ -7,14 +7,14 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.homework41.data.models.DataItem
-import com.example.homework41.databinding.ItemHomeBinding
+import com.example.homework41.databinding.ItemAnimeBinding
 
-class HomeAdapter(
+class AnimeAdapter(
     private val onClickListener: (id: String) -> Unit
 ) :
-    ListAdapter<DataItem, HomeAdapter.ViewHolder>(diffUtil) {
+    ListAdapter<DataItem, AnimeAdapter.AnimeViewHolder>(diffUtil) {
 
-    inner class ViewHolder(private val binding: ItemHomeBinding) :
+    inner class AnimeViewHolder(private val binding: ItemAnimeBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {
@@ -31,9 +31,9 @@ class HomeAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            ItemHomeBinding.inflate(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimeViewHolder {
+        return AnimeViewHolder(
+            ItemAnimeBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -41,7 +41,7 @@ class HomeAdapter(
         )
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AnimeViewHolder, position: Int) {
         getItem(position).let {
             holder.onBind(it)
         }

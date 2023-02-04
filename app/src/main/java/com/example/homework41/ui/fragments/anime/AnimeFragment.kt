@@ -1,4 +1,4 @@
-package com.example.homework41.ui.fragments.home
+package com.example.homework41.ui.fragments.anime
 
 import android.os.Bundle
 import android.view.View
@@ -7,16 +7,16 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.homework41.R
-import com.example.homework41.databinding.FragmentHomeBinding
-import com.example.homework41.ui.adapters.HomeAdapter
+import com.example.homework41.databinding.FragmentAnimeBinding
+import com.example.homework41.ui.adapters.AnimeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(R.layout.fragment_home2) {
+class AnimeFragment : Fragment(R.layout.fragment_home2) {
 
-    private val VM: HomeViewModel by viewModels()
-    private val binding by viewBinding(FragmentHomeBinding::bind)
-    private val adapter = HomeAdapter(this::onClickListeners)
+    private val viewModel: AnimeViewModel by viewModels()
+    private val binding by viewBinding(FragmentAnimeBinding::bind)
+    private val adapter = AnimeAdapter(this::onClickListeners)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -29,13 +29,13 @@ class HomeFragment : Fragment(R.layout.fragment_home2) {
     }
 
     private fun setupObserves() {
-        VM.fetchAnime().observe(viewLifecycleOwner) {
+        viewModel.fetchAnime().observe(viewLifecycleOwner) {
             adapter.submitList(it.data)
         }
     }
 
     private fun onClickListeners(id: String) {
-        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToFormFragment(id.toInt()))
+        findNavController().navigate(AnimeFragmentDirections.actionAnimeFragment2ToDetailFragment2(id.toInt()))
     }
 
 }

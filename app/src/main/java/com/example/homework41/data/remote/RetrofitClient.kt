@@ -1,6 +1,6 @@
 package com.example.homework41.data.remote
 
-import com.example.homework41.data.remote.api.AnimeApiService
+import com.example.homework41.data.remote.apiservices.AnimeApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

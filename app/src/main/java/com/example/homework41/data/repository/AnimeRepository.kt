@@ -1,7 +1,7 @@
 package com.example.homework41.data.repository
 
 import androidx.lifecycle.liveData
-import com.example.homework41.data.remote.api.AnimeApiService
+import com.example.homework41.data.remote.apiservices.AnimeApiService
 import javax.inject.Inject
 
 class AnimeRepository @Inject constructor(private val service: AnimeApiService) {
